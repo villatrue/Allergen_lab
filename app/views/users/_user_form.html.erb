@@ -1,0 +1,7 @@
+<%= form_for @user do |f| %>
+    <%= f.label :name, "User's Name:" %>
+    <%= f.text_field :name %>
+    <%= f.label :allergy_id %>
+    <%= f.collection_select(:allergy_id, Ingredient.all, :id, :name, prompt: "Any Allergies?") %>
+    <%= f.submit %>
+<% end %>
